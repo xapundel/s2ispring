@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: null
+    version: latest
+  name: null
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: null
+      version: latest
+  template:
+    metadata:
+      labels:
+        app: null
+        version: latest
+    spec:
+      containers:
+      - env:
+        - name: LOGGING_PROFILE
+          value: dev
+        - name: SPRING_PROFILES_ACTIVE
+          value: profile
+        - name: MALLOC_ARENA_MAX
+          value: '4'
+        - name: SERVICE_NAME
+          value: legacy-api-accounts-v1
+        - name: LOGCOLLECTOR_TCP_PORT
+          value: '514'
+        - name: LOGGING_CONFIG
+          value: ./logback.groovy
+        - name: CONTAINER_NAME
+          value: legacy-api-accounts-v1
+        - name: LOGCOLLECTOR_SYSTEM_LABEL
+          value: nimb
+        - name: PLATFORM_TASK_ID
+          value: '[:]'
+        - name: APP
+          value: legacy-api-accounts-v1
+        - name: LOGSTASH_SYSLOG_TAGS
+          value: forwarding,json
+        - name: CONFIG_BRANCH
+          value: profile
+        - name: LOGSTASH_PORT_5959_TCP_PORT
+          value: '514'
+        - name: PLATFORM_EVENT_ID
+          value: '[:]'
+        - name: LOGSTASH_HOST_ENV_VAR_NAME
+          value: HOST
+        - name: CONFIG_SERV
+          value: http://servername01/config-server,http://servername02/config-server,http://servername03/config-server,http://servername04/config-server,http://servername05/config-server
+        image: registry.ocp4.example.com:5000/openshift/springdemoapp
+        name: springdemoapp
+        resources:
+          limits:
+            cpu: 2.0
+            memory: 1536Mi 
