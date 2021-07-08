@@ -1,6 +1,6 @@
 #This file is used dynamically adding artifacts into base image and creating a app image as a result.
 
-ls -al
+ls /tmp -al
 
 cp /tmp/app.jar /opt
 
