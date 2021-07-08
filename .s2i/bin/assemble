@@ -2,7 +2,7 @@
 
 ls /tmp/src -al
 
-cp /tmp/src/app.jar /opt
+cp /tmp/src/src/app.jar /opt
 
 echo "jar was copied"
 
