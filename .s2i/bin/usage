@@ -1,0 +1,5 @@
+#!/bin/bash -e
+cat <<EOF
+Just an example
+
+EOF

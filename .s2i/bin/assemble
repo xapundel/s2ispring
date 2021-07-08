@@ -1,0 +1,6 @@
+#This file is used dynamically adding artifacts into base image and creating a app image as a result.
+
+cp app.jar /opt
+#cp -Rf /tmp/src/. $CATALINA_HOME/webapps
+#chown -R 1001:1001 $CATALINA_HOME/webapps
+#ls -lrt $CATALINA_HOME/webapps

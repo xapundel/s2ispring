@@ -1,0 +1,2 @@
+#This file is used for mentioning startup script.
+java -jar /opt/app.jar
