@@ -1,5 +1,5 @@
 #FROM    registry.access.redhat.com/ubi8/openjdk-11 AS builder
-FROM openjdk:11.0.3-jdk AS builder
+FROM image-registry.openshift-image-registry.svc:5000/openshift/openjdk:11.0.3-jdk AS builder
 MAINTAINER Igor Khapov 
 LABEL Description="springDemoApp" Version="1.0.0"
 
@@ -15,7 +15,7 @@ RUN     set -euo pipefail; \
 
 #-----------------------------------------------------------------------------------------------------------------------------------
 #FROM    registry.access.redhat.com/ubi8/openjdk-11
-FROM openjdk:11.0.3-jre
+FROM image-registry.openshift-image-registry.svc:5000/openshift/openjdk:11.0.3-jre
 # Setup package manager, https://manpages.debian.org/buster/debconf-doc/debconf.7.en.html
 ARG     DEBIAN_FRONTEND=noninteractive
 
