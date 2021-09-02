@@ -7,6 +7,7 @@ LABEL Description="springDemoApp" Version="1.0.0"
 WORKDIR /usr/src
 COPY    . .
 
+USER root
 
 SHELL   ["/bin/bash", "-c"]
 RUN     set -euo pipefail; \
