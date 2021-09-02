@@ -8,8 +8,7 @@ COPY    . .
 
 
 SHELL   ["/bin/bash", "-c"]
-RUN     set -euo pipefail; \
-        ./gradlew --stacktrace --info --console=plain build; \
+RUN     ./gradlew --stacktrace --info --console=plain build; \
         APP_VER=$(grep '^version' build.gradle | cut -d "'" -f2); \
         cd build/libs/ && mv springDemoApp-$APP_VER.jar app.jar
 
