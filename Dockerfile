@@ -11,8 +11,7 @@ SHELL   ["/bin/bash", "-c"]
 RUN     set -euo pipefail; \
         ./gradlew --stacktrace --info --console=plain build; \
         APP_VER=$(grep '^version' build.gradle | cut -d "'" -f2); \
-        cd build/libs/ && mv springDemoApp-$APP_VER.jar app.jar
-RUN     rm -rf /usr/src    
+        cd build/libs/ && mv springDemoApp-$APP_VER.jar app.jar   
 
 #-----------------------------------------------------------------------------------------------------------------------------------
 #FROM    registry.access.redhat.com/ubi8/openjdk-11
