@@ -1,6 +1,6 @@
 #FROM    registry.access.redhat.com/ubi8/openjdk-11 AS builder
 #FROM image-registry.openshift-image-registry.svc:5000/openshift/openjdk:11.0.3-jdk AS builder
-FROM openjdk-11:1.10-1
+FROM image-registry.openshift-image-registry.svc:5000/openshift/openjdk-11:1.10-1
 MAINTAINER Igor Khapov 
 LABEL Description="springDemoApp" Version="1.0.0"
 
