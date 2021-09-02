@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: null
+    app: springdemoapp
     version: latest
-  name: null
+  name: springdemoapp
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: null
+      app: springdemoapp
       version: latest
   template:
     metadata:
       labels:
-        app: null
+        app: springdemoapp
         version: latest
     spec:
       containers:
@@ -52,7 +52,7 @@ spec:
           value: HOST
         - name: CONFIG_SERV
           value: http://servername01/config-server,http://servername02/config-server,http://servername03/config-server,http://servername04/config-server,http://servername05/config-server
-        image: registry.ocp4.example.com:5000/openshift/springdemoapp
+        image: image-registry.openshift-image-registry.svc:5000/openshift/springdemoapp
         name: springdemoapp
         resources:
           limits:
