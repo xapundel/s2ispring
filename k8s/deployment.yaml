@@ -5,7 +5,7 @@ metadata:
     app: springdemoapp
     version: latest
   name: springdemoapp
-  namespace: default
+  namespace: pipelines-tutorial
 spec:
   replicas: 1
   selector:
