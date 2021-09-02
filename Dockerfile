@@ -26,5 +26,7 @@ CMD     java -jar /opt/app.jar
 
 EXPOSE	8080/tcp
 
+RUN sleep 20
+
 #docker build -t springdemoapp .
 #docker run -it --rm -p 8080:8080 springdemoapp
