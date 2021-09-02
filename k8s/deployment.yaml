@@ -52,7 +52,7 @@ spec:
           value: HOST
         - name: CONFIG_SERV
           value: http://servername01/config-server,http://servername02/config-server,http://servername03/config-server,http://servername04/config-server,http://servername05/config-server
-        image: image-registry.openshift-image-registry.svc:5000/openshift/springdemoapp
+        image: image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/springdemoapp
         name: springdemoapp
         resources:
           limits:
