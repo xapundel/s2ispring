@@ -13,12 +13,12 @@ SHELL   ["/bin/bash", "-c"]
 RUN     set -euo pipefail; \
         ./gradlew --stacktrace --info --console=plain build; \
         APP_VER=$(grep '^version' build.gradle | cut -d "'" -f2); \
-        cd build/libs/ && mv springDemoApp-$APP_VER.jar /opt/app.jar   
+        cd build/libs/ && mv springDemoApp-$APP_VER.jar /home/jboss/app.jar   
 
 ARG     DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /opt
-CMD     java -jar /opt/app.jar
+CMD     java -jar /home/jboss/app.jar
 
 EXPOSE	8080/tcp
 
